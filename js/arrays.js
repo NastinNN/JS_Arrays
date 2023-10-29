@@ -59,3 +59,25 @@ function task4() {
       let newArr=arr.filter((elem) => (elem%5==0 && elem!=0));
       return newArr;
 }
+
+function task5 () {
+      let arr=[];
+      while(true)
+      {
+            while(true) /* если пользователь ввел неправильное значение, попытка ввода будет повторяться до тех пор, пока не будет введено целое число */
+            {
+            let x=prompt("Введите число массива");
+            if (!isNaN(x)) 
+                 {
+                  arr.push(x);
+                  break;
+                 }
+            else 
+                  alert("Введено не число или нецелое число. Попробуйте снова");
+            }
+            if (!confirm("Внести еще один элемент?")) break;
+      }
+      let sum=arr.reduce((summa,elem) => +summa + +elem, 0);
+      let srAr=sum/arr.length;
+      return srAr.toFixed(1);
+}
