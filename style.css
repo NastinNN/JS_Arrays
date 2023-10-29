@@ -1,0 +1,7 @@
+.done {
+      color: darkgreen;
+}
+.undone {
+      color: black;
+      text-decoration: none;
+}
