@@ -17,3 +17,17 @@ function task2() {
       }, 0);
       alert (`Сумма элементов массива ${arr}, которые больше 0  меньше 10 = ${summa}`);
 }
+
+function task3() {
+      let arr=[];
+      while(true)
+      {
+            let x=prompt("Введите число массива");
+            if (!isNaN(x) && Number.isInteger(Number(x))) /* Проверка того, введено ли число и целое ли оно */
+                  arr.push(x);
+            else alert("Введено не число или нецелое число");
+            if (!confirm("Внести еще один элемент?")) break;
+      }
+      let check=arr.every((elem) => elem%2==0);
+      return check;
+}
