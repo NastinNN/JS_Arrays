@@ -38,3 +38,24 @@ function task3() {
       let check=arr.every((elem) => elem%2==0);
       return check;
 }
+
+function task4() {
+      let arr=[];
+      while(true)
+      {
+            while(true) /* если пользователь ввел неправильное значение, попытка ввода будет повторяться до тех пор, пока не будет введено целое число */
+            {
+            let x=prompt("Введите целое число массива");
+            if (!isNaN(x) && Number.isInteger(Number(x))) /* Проверка того, введено ли число и целое ли оно */
+                 {
+                  arr.push(x);
+                  break;
+                 }
+            else 
+                  alert("Введено не число или нецелое число. Попробуйте снова");
+            }
+            if (!confirm("Внести еще один элемент?")) break;
+      }
+      let newArr=arr.filter((elem) => (elem%5==0 && elem!=0));
+      return newArr;
+}
