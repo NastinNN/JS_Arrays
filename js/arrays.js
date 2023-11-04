@@ -155,3 +155,12 @@ function task8() {
       let arr=num.split("").map((elem) => +elem+1);
       console.log(`Преобразованное число: ${arr.join("")}`);
 }
+
+function task9() {
+      let arr=["http://mail.ru", "http://yandex.ru", "vk.com", "http://google.com", "ok.ru"];
+      console.log(`Исходный массив:`); /* Вывод двумя строчками для удобства и красоты :D */
+      console.log(arr);
+      let newArr=arr.filter((elem) => elem.startsWith("http://"));
+      console.log(`Измененный массив:`);
+      console.log(newArr);
+}
