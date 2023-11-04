@@ -130,12 +130,12 @@ function task7() {
       console.log (`Исходный массив: ${arr}`);
       let sumchet=arr.reduce((sum, elem, index) =>{
             if (index%2==0)
-            sum=sum+elem;
+            sum=+sum + +elem;
             return sum;
       }, 0);
       let sumnechet=arr.reduce((sum, elem, index) =>{
             if (index%2!=0)
-            sum=sum+elem;
+            sum=+sum+ +elem;
             return sum;
       }, 0);
       console.log(`Сумма элементов на четных позиях, деленная на сумму элементов на нечетных позициях = ${sumchet/sumnechet}`);
