@@ -73,11 +73,34 @@ function task5 () {
                   break;
                  }
             else 
-                  alert("Введено не число или нецелое число. Попробуйте снова");
+                  alert("Введено не число. Попробуйте снова");
             }
             if (!confirm("Внести еще один элемент?")) break;
       }
       let sum=arr.reduce((summa,elem) => +summa + +elem, 0);
       let srAr=sum/arr.length;
       return srAr.toFixed(1);
+}
+
+function task6() {
+      let arr=[];
+      while(true)
+      {
+            while(true) /* если пользователь ввел неправильное значение, попытка ввода будет повторяться до тех пор, пока не будет введено целое число */
+            {
+            let x=prompt("Введите число массива");
+            if (!isNaN(x)) 
+                 {
+                  arr.push(x);
+                  break;
+                 }
+            else 
+                  alert("Введено не число. Попробуйте снова");
+            }
+            if (!confirm("Внести еще один элемент?")) break;
+      }
+      console.log(`Изначальный массив: ${arr}`);
+      let elem=arr.shift();
+      arr.push(elem);
+      console.log(`Измененный массив: ${arr}`);
 }
