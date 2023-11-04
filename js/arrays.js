@@ -164,3 +164,44 @@ function task9() {
       console.log(`Измененный массив:`);
       console.log(newArr);
 }
+
+function task10(data) {
+      let keys=data.reduce((key, elem) => [...key, ...(Object.keys(elem))], []); /* Получаем все ключи (с повторениями) */
+      console.log (`Массив из ключей (с повторениями): [${keys}]`);
+      let uniqueKeys=[...new Set(keys)]; /* Оставляем в массиве только уникальные ключи */
+      console.log (`Массив из уникальных ключей (без повторений): [${uniqueKeys}]`);
+
+      let values=data.reduce((key, elem) => [...key, ...(Object.values(elem))], []); /* Получаем все значения */
+      console.log (`Массив из значений объекта: [${values}]`);
+      let sum=values.reduce((sum, elem) => sum=+sum+ +elem, 0);
+      console.log(`Сумма всех значений объекта: ${sum}`);
+
+      // Решение №2
+      console.log("Решение другим способом");
+      let sum1=0;
+      let sum2=0;
+      let sum3=0;
+      let sumOb=0;
+      let arrkey=[];
+      let arrvalues=[];
+      data.forEach(elem=>{
+            for (key in elem)
+            {
+                  arrkey.push(key);
+                  arrvalues.push(elem[key]);
+                  sumOb+= +elem[key];
+                  if (key==1)
+                  sum1+= +elem[key];
+                  if (key==2)
+                  sum2+= +elem[key];
+                  if (key==3)
+                  sum3+= +elem[key];
+            }
+        });
+        console.log(`Массив из ключей объекта: [${arrkey}]`);
+        console.log(`Массив из всех значений массива объектов: [${arrvalues}]`);
+        console.log(`Сумма всех значений объектов: ${sumOb}`);
+        console.log(`Сумма всех значений объекта с ключом 1: [${sum1}]`);
+        console.log(`Сумма всех значений объекта с ключом 2: [${sum2}]`);
+        console.log(`Сумма всех значений объекта с ключом 3: [${sum3}]`);
+}
