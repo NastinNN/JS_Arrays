@@ -5,7 +5,8 @@ function task1() {
                   sum+=Math.sqrt(elem);
             return sum;
       }, 0);
-      alert (`Сумма квадратных корней для всех четных чисел целочисленного массива [${arr}] = ${summa}`);
+      console.log(`Исходный массив: ${arr}`);
+      console.log(`Сумма квадратных корней для всех четных чисел целочисленного массива [${arr}] = ${summa}`);
 }
 
 function task2() {
@@ -15,7 +16,8 @@ function task2() {
                   sum+=elem;
             return sum;
       }, 0);
-      alert (`Сумма элементов массива [${arr}], которые больше 0 и меньше 10 = ${summa}`);
+      console.log(`Исходный массив: ${arr}`);
+      console.log(`Сумма элементов массива [${arr}], которые больше 0 и меньше 10 = ${summa}`);
 }
 
 function task3() {
@@ -35,6 +37,7 @@ function task3() {
             }
             if (!confirm("Внести еще один элемент?")) break;
       }
+      console.log(`Исходный массив: ${arr}`);
       let check=arr.every((elem) => elem%2==0);
       return check;
 }
@@ -56,6 +59,7 @@ function task4() {
             }
             if (!confirm("Внести еще один элемент?")) break;
       }
+      console.log(`Исходный массив: ${arr}`);
       let newArr=arr.filter((elem) => (elem%5==0 && elem!=0));
       return newArr;
 }
@@ -77,6 +81,7 @@ function task5 () {
             }
             if (!confirm("Внести еще один элемент?")) break;
       }
+      console.log(`Исходный массив: ${arr}`);
       let sum=arr.reduce((summa,elem) => +summa + +elem, 0);
       let srAr=sum/arr.length;
       return srAr.toFixed(1);
@@ -103,4 +108,35 @@ function task6() {
       let elem=arr.shift();
       arr.push(elem);
       console.log(`Измененный массив: ${arr}`);
+}
+
+function task7() {
+      let arr=[];
+      while(true)
+      {
+            while(true) /* если пользователь ввел неправильное значение, попытка ввода будет повторяться до тех пор, пока не будет введено целое число */
+            {
+            let x=prompt("Введите число массива");
+            if (!isNaN(x)) 
+                 {
+                  arr.push(x);
+                  break;
+                 }
+            else 
+                  alert("Введено не число. Попробуйте снова");
+            }
+            if (!confirm("Внести еще один элемент?")) break;
+      }
+      console.log (`Исходный массив: ${arr}`);
+      let sumchet=arr.reduce((sum, elem, index) =>{
+            if (index%2==0)
+            sum=sum+elem;
+            return sum;
+      }, 0);
+      let sumnechet=arr.reduce((sum, elem, index) =>{
+            if (index%2!=0)
+            sum=sum+elem;
+            return sum;
+      }, 0);
+      console.log(`Сумма элементов на четных позиях, деленная на сумму элементов на нечетных позициях = ${sumchet/sumnechet}`);
 }
