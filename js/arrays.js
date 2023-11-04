@@ -157,7 +157,7 @@ function task8() {
 }
 
 function task9() {
-      let arr=["http://mail.ru", "http://yandex.ru", "vk.com", "http://google.com", "ok.ru"];
+      let arr=["http://mail.ru", "http://yandex.ru", "vk.chttp://om", "http://google.com", "ok.ruhttp://"];
       console.log(`Исходный массив:`); /* Вывод двумя строчками для удобства и красоты :D */
       console.log(arr);
       let newArr=arr.filter((elem) => elem.startsWith("http://"));
