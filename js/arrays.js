@@ -140,3 +140,18 @@ function task7() {
       }, 0);
       console.log(`Сумма элементов на четных позиях, деленная на сумму элементов на нечетных позициях = ${sumchet/sumnechet}`);
 }
+
+function task8() {
+      let num;
+      while (true) {
+            num=prompt(`Введите число`);
+            if (isNaN(num))
+                  alert(`Введено не число. Попробуйте снова`);
+            else
+                  break;
+      }
+      console.log(`Изначальное число: ${num}`);
+      num=num.toString(8);
+      let arr=num.split("").map((elem) => +elem+1);
+      console.log(`Преобразованное число: ${arr.join("")}`);
+}
