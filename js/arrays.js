@@ -205,3 +205,26 @@ function task10(data) {
         console.log(`Сумма всех значений объекта с ключом 2: [${sum2}]`);
         console.log(`Сумма всех значений объекта с ключом 3: [${sum3}]`);
 }
+
+function task11(data) {
+      console.log(data);
+      let keys=data.reduce((key, elem) => [...key, ...(Object.keys(elem))], []); /* Получаем все ключи (с повторениями) */
+      console.log (`Массив из ключей (с повторениями): [${keys}]`);
+      let uniqueKeys=[...new Set(keys)]; /* Оставляем в массиве только уникальные ключи */
+      console.log (`Массив из уникальных ключей (без повторений): [${uniqueKeys}]`);
+
+      for (let i=0; i<uniqueKeys.length;i++)
+            {
+                  let sum=0;
+                  data.forEach(elem=>{
+                        for (key in elem)
+                        {
+                              if (key==uniqueKeys[i])
+                              {
+                                    sum+=+elem[key];
+                              }
+                        }
+                  });
+      console.log(`Сумма элементов для ключа ${uniqueKeys[i]}=${sum}`);
+      }
+}
